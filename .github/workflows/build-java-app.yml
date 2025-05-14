@@ -22,8 +22,9 @@ jobs:
         # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
         java-version: 21
         distribution: temurin
-    - name: Go to folder
-      run: cd java-app
     - name: Run mvn to build
-      run: mvn clean install
+      run: | 
+        cd java-app
+        mvn clean install
+        
     
