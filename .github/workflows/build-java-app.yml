@@ -3,12 +3,12 @@
 ##
 ## More details on https://github.com/actions/first-interaction
 
-name: Greetings
+name: Build Java app
 
-on: [pull_request_target, issues]
+on: [push]
 
 jobs:
-  greeting:
+  build:
     runs-on: ubuntu-latest
     permissions:
       issues: write
