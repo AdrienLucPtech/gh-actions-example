@@ -14,8 +14,13 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-    - uses: actions/first-interaction@v1
+    - name: Checkout
+      uses: actions/checkout@v4.2.2
+    - name: Setup Java JDK
+      uses: actions/setup-java@v3.14.1
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Message that will be displayed on users' first issue"
-        pr-message: "Message that will be displayed on users' first pull request"
+        # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
+        java-version: 21
+    - name: Run mvn to build
+      run: mvn clean install
+    
