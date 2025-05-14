@@ -5,7 +5,13 @@
 
 name: Build Java app
 
-on: [push]
+on: 
+  push:
+  workflow_dispatch:
+    inputs:
+      Size:
+        description: 'Test a val'
+        type: number
 
 jobs:
   build:
