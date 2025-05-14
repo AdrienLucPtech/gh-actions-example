@@ -11,7 +11,7 @@ on:
     inputs:
       Size:
         description: 'Test a val'
-        type: number
+        type: boolean
 
 jobs:
   build:
